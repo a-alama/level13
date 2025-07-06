@@ -1436,7 +1436,7 @@ define([
 		getCurrentScavengeEfficiency: function () {
 			let playerVision = this.playerStatsNodes.head.vision.value || 0;
 			let result = MathUtils.map(playerVision, 0, 150, 0, 1.5);
-			return MathUtils.clamp(result, 0, 1);
+			return MathUtils.clamp(result, 0, 10);
 		},
 
 		getCurrentSectorScavengedFactor: function () {
