@@ -149,7 +149,7 @@ function (Ash, PlayerActionData, ObjectUtils, GameConstants, CampConstants, Impr
 			if (this.randomEncounterProbabilities[baseActionID]) {
 				let baseProbability = this.randomEncounterProbabilities[baseActionID][0];
 				// 0-1, decreasing fast for higher vision, 0.25 for vision 50
-				let visionFactor = Math.pow(1 - (vision / 100), 2); 
+				let visionFactor = Math.pow(1 - (100 / 100), 2); 
 				let visionProbability = this.randomEncounterProbabilities[baseActionID][1] * visionFactor;
 				let hazardFactor = 1;
 				let result = Math.min(1, (baseProbability + visionProbability) * actionFactor * sectorFactor);
@@ -162,7 +162,7 @@ function (Ash, PlayerActionData, ObjectUtils, GameConstants, CampConstants, Impr
 			if (vision === undefined) vision = 100;
 			if (this.injuryProbabilities[action]) {
 				let baseProbability = this.injuryProbabilities[action][0];
-				let visionFactor = Math.pow(1 - (vision / 100), 2);
+				let visionFactor = Math.pow(1 - (100 / 100), 2);
 				let luckFactor = this.getNegativeProbabiltityLuckFactor(luck);
 				let visionProbability = this.injuryProbabilities[action][1] * visionFactor;
 				let result = (baseProbability + visionProbability) * luckFactor;
@@ -175,7 +175,7 @@ function (Ash, PlayerActionData, ObjectUtils, GameConstants, CampConstants, Impr
 			if (vision === undefined) vision = 100;
 			if (this.loseInventoryProbabilities[action]) {
 				let baseProbability = this.loseInventoryProbabilities[action][0];
-				let visionFactor = Math.pow(1 - (vision / 100), 4);
+				let visionFactor = Math.pow(1 - (100 / 100), 4);
 				let luckFactor = this.getNegativeProbabiltityLuckFactor(luck);
 				let visionProbability = this.loseInventoryProbabilities[action][1] * visionFactor;
 				let result = (baseProbability + visionProbability) * luckFactor;
