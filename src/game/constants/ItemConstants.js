@@ -3,7 +3,7 @@ function (Ash, ItemData, Text, MathUtils, PlayerActionConstants, ItemVO) {
 
 	let ItemConstants = {
 		
-		PLAYER_DEFAULT_STORAGE: 10,
+		PLAYER_DEFAULT_STORAGE: 100,
 
 		DEFAULT_EQUIPMENT_ITEM_LEVEL: 50,
 		
@@ -272,7 +272,7 @@ function (Ash, ItemData, Text, MathUtils, PlayerActionConstants, ItemVO) {
 
 		getBaseBonus: function (itemVO, bonusType) {
 			if (!itemVO) return 0;
-			return itemVO.getBaseBonus(bonusType);
+			return itemVO.getBaseBonus(bonusType) * 10;
 		},
 
 		getDefaultTotalBonus: function (itemVO) {
